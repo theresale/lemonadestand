@@ -4,8 +4,7 @@
 	console.log(document.weather);
 }*/
 
-
-function LemonadeStand(){
+function People(){
 	this.peopleArray = [];
 	this.addPeople = function(num){
 		var people = num;
@@ -15,16 +14,27 @@ function LemonadeStand(){
 		}
 	console.log(this.peopleArray);
 	}
-
-	this.onSubmit = function(){
-		var daysSimulate = document.getElementById("daysSimulate").value;  
-		var avgPeople = document.getElementById("avgPeople").value;  
-		var cost = document.getElementById("cost").value;  
-		var price = document.getElementById("price").value;  
-		alert(daysSimulate + avgPeople + cost + price);
-	}
-
 }
 
-var myTest = new LemonadeStand();
-myTest.addPeople(5);
+function Button(){
+	People.prototype.getGlassesSold = function(){
+
+	}
+
+	this.onSubmit = function(){
+		this.daysSimulate = document.getElementById("daysSimulate").value;  
+		this.avgPeople = document.getElementById("avgPeople").value;  
+		this.cost = document.getElementById("cost").value;  
+		this.price = document.getElementById("price").value; 
+		var simulateTable = "<table>" + "<tr>" + "<th>" + "DAY" + "</th>" + "<th>" + "PEOPLE" + "</th>" + "<th>" + "GLASSES SOLD" + "</th>" + "<th>" + "PROFIT" + "</th>" + "</tr>";
+		for (var i=0; i <this.daysSimulate; i++) {
+			simulateTable += "<tr>" + "<td>" +  "Day " + i + "</td>" + "<td>" + this.avgPeople + "</td>" + "<td>" + "FUNCTION" + "</td>" + "<td>" + "FUNCTION + this.cost" + "</td>" + "</tr>";
+		}
+		simulateTable += "</table>";
+		alert(simulateTable);
+	}
+}
+
+
+var myTest = new People();
+var myTest2 = new Button();
