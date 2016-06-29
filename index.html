@@ -10,14 +10,14 @@
 <div id="main">
 
 <h1>Lemonade Stand</h1><br>	
-<form id="myForm">
+<form method="GET" id="lemonadeForm">
   <fieldset>
     <legend><b>Predict your stand's profit:</b></legend>
-    Days to simulate (1-10):<input type="text" id="daysSimulate"><br>
-    Average number of people that walk by:<input type="text" id="avgPeople"><br>
-    Cost to make a glass of lemonade:<input type="text" id="cost"><br>
-    Price you are charging for a glass of lemonade (must be at least $1:<input type="text" id="price"><br> 
-    <input type="submit" value="SUBMIT">
+    Days to simulate (1-10):<input type="text" id="daysSimulate" name="daysSimulate"><br>
+    Average number of people that walk by:<input type="text" id="avgPeople" name="avgPeople"><br>
+    Cost to make a glass of lemonade:<input type="text" id="cost" name="cost"><br>
+    Price you are charging for a glass of lemonade (must be at least $1:<input type="text" id="price" name="price"><br> 
+    <input type="submit" value="SUBMIT" onclick="myTest.onSubmit();" id="predictButton">
   </fieldset>
 </form>
 
