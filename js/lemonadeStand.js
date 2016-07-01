@@ -26,14 +26,15 @@ function People(){
 
 function AllPeople(){
 	this.allPeopleArray = [];
+	this.truePeople = [];
 
 	this.addPeoplePerDay = function(days,avgPeople,temp,price){
 		for (var i=0; i<days; i++){
 			var pplOneDay = new People();
 			pplOneDay.addPeople(i,avgPeople,temp[i],price);
 			this.allPeopleArray.push(pplOneDay.peopleArray);
+			if ()
 		}
-
 	}
 }
 
@@ -56,6 +57,7 @@ function LemonadeStand(){
 	this.temp = new Weather();
 	this.people = new AllPeople();
 
+
 	this.generateLemonadeStand = function(elementID){	
 			var element = document.getElementById(elementID);
 			this.avgPeople = parseInt(document.getElementById("avgPeople").value);  
@@ -64,45 +66,19 @@ function LemonadeStand(){
 			this.cost = parseInt(document.getElementById("cost").value);
 
 			this.temp.getWeather(this.daysSimulate);
-			//console.log(this.temp.weatherArray);
 
 			this.people.addPeoplePerDay(this.daysSimulate,this.avgPeople,this.temp.weatherArray,this.price);
 			console.log(this.people.allPeopleArray);
-			this.people.allPeopleArray.map(buyLemonade())
 
 
-
-		/*this.people = new People();
-		this.people.addPeople(this.avgPeople);
-		this.temp = new Weather();
-		this.temp.getWeather(this.daysSimulate);
-		this.customersWhoBuyArray = [];
-
-		this.findCustomersWhoBuy = function(){
-			console.log(this.people);
-			for(var i=0; i<this.people.peopleArray.length; i++){
-				var customers = this.people.peopleArray[i].buyLemonade(this.temp.weatherArray[i],this.price);
-				if(customers === true){
-				this.customersWhoBuyArray.push(customers);
-				}
-			}
-		}
-
-		this.createLemonadeStand = function(elementID){*/
-	/*
-			this.customers = new LemonadeStandGenerator(); 
-			this.people.addPeople(this.avgPeople);
-			this.findCustomersWhoBuy();
-			//console.log(this.findCustomersWhoBuy.customersWhoBuyArray.length);
 			var simulateTable = "<table><tr><th>" + "DAY" + "</th><th>" + "PEOPLE" + "</th><th>" + "GLASSES SOLD" + "</th><th>" + "PROFIT" + "</th></tr>";
 			for (var i=0; i <this.daysSimulate; i++) {
-				simulateTable += "<tr><td>" +  "Day " + (i+1) + "</td><td>" + this.avgPeople + "</td><td>" + this.customersWhoBuyArray.length + "</td><td>" + this.customersWhoBuyArray.length * this.cost + "</td></tr>";
+				simulateTable += "<tr><td>" +  "Day " + (i+1) + "</td><td>" + this.avgPeople + "</td><td>" + "this.customersWhoBuyArray.length" + "</td><td>" + "this.customersWhoBuyArray.length * this.cost" + "</td></tr>";
 			}
 			simulateTable += "<tr><td>" + "<b>TOTAL: </b> Days " + this.daysSimulate + "</td><td>" + "People " + this.avgPeople*this.daysSimulate + "</td><td>" + "totalthis" + "</td><td>" + "totalthat" + "</td></tr></table>";
 			element.innerHTML = simulateTable;
-		}
-	*/
 	}
+	
 }
 
 var myStand = new LemonadeStand();
