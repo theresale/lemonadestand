@@ -29,16 +29,13 @@
     : COST TO MAKE A GLASS OF LEMONADE<br><br>
     <input type="text" id="price" name="price">
     : PRICE YOU ARE CHARGING FOR A GLASS OF LEMONADE (must be at least $1)<br><br>
-    <button type="button" onclick="myTest2.createLemonadeTable('table');" id="predictButton">SUBMIT</button>
+    <button type="button" onclick="myStand.generateLemonadeStand('resultsTable');" id="predictButton">SUBMIT</button>
   </fieldset>
 </form>
 
 </div>
 
-<div id="table"></div>
-
-<button type="button" onclick="weatherTest.getWeather(5);">SUBMIT</button>
-
+<div id="resultsTable"></div>
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
@@ -52,7 +49,6 @@ $(document).ready(function() {
     unit: 'f',
     success: function(weather){
       document.weather = weather;
-      startLemonadeStand();
     }
   });
 });
